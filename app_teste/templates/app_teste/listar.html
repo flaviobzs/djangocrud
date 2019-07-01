@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste FBS</title>
+</head>
+<body>
+    
+    <h2>LISTAGEM</h2>
+    <ul>
+    {% for equipe in equipes %}
+    <li>    
+        {{equipe.nome}} - {{equipe.data_criacao}}
+        <a href="{% url 'atualizar' equipe.id %}">Atualizar</a>
+        <a href="{% url 'deletar' equipe.id %}">Deletar</a>
+    </li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'novo' %}">Novo</a>
+</body>
+</html>
